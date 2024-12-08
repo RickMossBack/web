@@ -56,7 +56,7 @@
         .album-cover {
             width: 200px; /* Smaller album cover */
             height: auto;
-            margin: 20px 0;
+            margin: 10px 0; /* Adjusting spacing to make title and cover closer */
             border-radius: 10px;
             cursor: pointer;
             transition: transform 0.3s;
@@ -67,93 +67,15 @@
         }
 
         .album-title {
-            font-size: 1rem;
+            font-size: 1.25rem; /* Slightly bigger font size for title */
             margin-top: 10px;
             font-weight: bold;
-            position: absolute;
-            bottom: 15%;
         }
 
         /* Main Page Scrolling */
         .main-page {
             overflow-y: scroll;
             height: 100vh;
-        }
-
-        /* Tracklist Page Layout */
-        .tracklist-page {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 40px;
-            width: 100%;
-            height: 100%;
-            max-width: 1200px;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .album-info {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-right: 20px;
-            margin-bottom: 20px;
-        }
-
-        .album-cover-large {
-            width: 300px;
-            height: auto;
-            margin: 20px 0;
-            border-radius: 10px;
-        }
-
-        .details {
-            font-size: 0.8rem;
-            color: gray;
-            margin-top: 10px;
-            text-align: center;
-        }
-
-        .tracklist {
-            width: 100%;
-            max-width: 500px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding-left: 40px;
-            margin-top: 20px;
-            margin-left: 20px;
-        }
-
-        .tracklist button {
-            display: block;
-            background-color: transparent;
-            color: white;
-            border: 2px solid #444;
-            padding: 15px 20px;
-            margin: 10px 0;
-            font-size: 1.25rem;
-            text-align: left;
-            cursor: pointer;
-            width: 100%;
-            border-radius: 5px;
-            text-transform: uppercase;
-            position: relative;
-            font-family: 'Montserrat', sans-serif;
-            transition: background-color 0.3s, transform 0.2s ease-in-out;
-        }
-
-        .tracklist button:hover {
-            background-color: #555;
-            transform: scale(1.05);
-        }
-
-        .tracklist button span {
-            background-color: #444;
-            padding: 5px;
-            margin-right: 10px;
-            border-radius: 5px;
         }
 
         /* Back Button */
@@ -173,37 +95,6 @@
 
         .back-button:hover {
             background-color: #444;
-        }
-
-        /* Tracklist Separator Line */
-        .separator {
-            width: 2px;
-            height: 80vh;
-            background-color: #444;
-            margin: 0 20px;
-        }
-
-        /* Random Glitch Effect on Text */
-        @keyframes randomGlitch {
-            0% { color: white; }
-            10% { color: gray; }
-            20% { color: black; }
-            30% { color: white; }
-            50% { color: gray; }
-            80% { color: black; }
-            100% { color: white; }
-        }
-
-        .main-page-content, .tracklist-page {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Additional Styling for Main Page Content */
-        .album-title {
-            margin-top: 20px;
         }
     </style>
 </head>
