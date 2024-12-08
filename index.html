@@ -116,46 +116,32 @@
 
 /* Styling the Album Cover Image as a Background */
 .album-cover {
-    width: 150px; /* Reduced size */
-    height: 150px; /* Set a fixed height */
+    width: 150px; /* Fixed width for the album cover */
+    height: 150px; /* Fixed height for the album cover */
     margin: 10px 0;
     border-radius: 10px;
     background-image: url('https://github.com/user-attachments/assets/2d025cd3-9267-45b4-8ef0-fb9a20fdc84e');
-    background-size: cover; /* Ensures the image covers the entire div */
+    background-size: cover; /* Ensures the image covers the entire div without stretching */
     background-position: center; /* Centers the image */
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease; /* Smooth scaling effect */
 }
 
 /* Hover Effect for the Album Cover */
 .album-cover:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Slightly enlarges the image on hover */
 }
 
 /* Styling the Album Title */
 .album-title {
-    font-size: 0.9rem; /* Smaller font */
+    font-size: 0.9rem; /* Smaller font for the title */
     font-weight: bold;
-    margin-top: 5px; /* Adjust spacing */
-    text-align: center; /* Ensure alignment with the cover */
+    margin-top: 5px; /* Adjust spacing to make it look balanced */
+    text-align: center; /* Center the text */
 }
 
-    <!-- Hidden Audio Player -->
-    <audio id="background-audio" autoplay>
-        <source src="your-song-url.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
 
-    <script>
-        // JavaScript to trigger the song with a 1/1000 chance
-        window.onload = function() {
-            var randomChance = Math.floor(Math.random() * 1000) + 1;
-
-            if (randomChance === 1) {
-                var audio = document.getElementById('background-audio');
-                audio.play();
-            }
-        };
+ 
         /* Tracklist Page Layout */
 .tracklist-page {
     display: flex;
