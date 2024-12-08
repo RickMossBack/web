@@ -37,28 +37,56 @@
             visibility: visible;
         }
 
-        /* Title Styles */
-        .title {
-            font-size: 3rem;
-            font-weight: bold;
-            color: white;
-            position: absolute;
-            top: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: glitchColor 1s infinite;
-            letter-spacing: 0.05em;
-        }
+      .title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: glitchEffect 0.3s infinite; /* Faster animation cycle */
+    letter-spacing: 0.05em;
+    text-shadow: 
+        2px 2px #ff00ff,
+        -2px -2px #00ffff,
+        3px 0 #ff0000,
+        0 3px #00ff00;
+}
 
-        @keyframes glitchColor {
-            0%, 100% { color: white; }
-            10% { color: gray; }
-            20% { color: black; }
-            30% { color: white; }
-            50% { color: black; }
-            70% { color: gray; }
-            90% { color: white; }
-        }
+@keyframes glitchEffect {
+    0% {
+        transform: translateX(-50%) translateY(0);
+        color: white;
+        text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff, 3px 0 #ff0000, 0 3px #00ff00;
+    }
+    10% {
+        transform: translateX(-50%) translateY(-2px);
+        color: #ff00ff;
+        text-shadow: -2px -2px #00ffff, 2px 2px #00ff00, -3px 0 #ff0000;
+    }
+    20% {
+        transform: translateX(-50%) translateY(2px);
+        color: #00ffff;
+        text-shadow: 3px 3px #ff00ff, 0 -3px #ff0000, -2px 0 #00ff00;
+    }
+    40% {
+        transform: translateX(-50%) translateY(-3px);
+        color: #ff0000;
+        text-shadow: -2px -2px #00ffff, 2px 3px #ff00ff, 0 3px #00ff00;
+    }
+    60% {
+        transform: translateX(-50%) translateY(3px);
+        color: #00ff00;
+        text-shadow: 2px 2px #ff00ff, -3px 0 #ff0000, 0 -3px #00ffff;
+    }
+    100% {
+        transform: translateX(-50%) translateY(0);
+        color: white;
+        text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff, 3px 0 #ff0000, 0 3px #00ff00;
+    }
+}
+
 
         /* Main Page Layout */
         .main-page-content {
