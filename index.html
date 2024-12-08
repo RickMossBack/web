@@ -123,25 +123,24 @@
         }
 
         .album-cover {
-            width: 250px;
-            height: auto;
-            margin: 20px 0;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
+    width: 150px; /* Reduced size */
+    height: auto;
+    margin: 10px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
 
         .album-cover:hover {
             transform: scale(1.1);
         }
 
         .album-title {
-            font-size: 1.2rem;
-            margin-top: 10px;
-            font-weight: bold;
-            position: absolute;
-            bottom: 15%;
-        }
+    font-size: 0.9rem; /* Smaller font */
+    font-weight: bold;
+    margin-top: 5px; /* Adjust spacing */
+    text-align: center; /* Ensure alignment with the cover */
+}
 
         /* Tracklist Page Layout */
 .tracklist-page {
@@ -182,6 +181,10 @@
     color: gray;
     margin-top: 20px;
     text-align: left;
+}
+/* Prevent page scrolling on the tracklist page */
+body.no-scroll {
+    overflow: hidden;
 }
 
 .tracklist {
