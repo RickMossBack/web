@@ -133,7 +133,6 @@
     text-align: left;
 }
 
-/* Adjusted Tracklist Styles to Remove Bottom Slider */
 .tracklist {
     flex: 1;
     display: flex;
@@ -142,15 +141,16 @@
     justify-content: center;
     padding-left: 40px;
     max-height: 80vh;
-    overflow-y: auto; /* Vertical scrolling only */
+    overflow-y: auto; /* Ensure smooth vertical scrolling */
     overflow-x: hidden; /* Prevent horizontal scrolling */
     margin-left: 80px;
     scrollbar-width: thin; /* Slim scrollbar for modern browsers */
     scrollbar-color: #555 #222;
+    position: relative; /* Keeps the tracklist within its parent container */
 }
 
 .tracklist::-webkit-scrollbar {
-    width: 8px; /* Only vertical scrollbar visible */
+    width: 8px;
 }
 
 .tracklist::-webkit-scrollbar-thumb {
@@ -161,7 +161,6 @@
 .tracklist::-webkit-scrollbar-track {
     background-color: #222;
 }
-
 
 /* Separator Line */
 .separator {
