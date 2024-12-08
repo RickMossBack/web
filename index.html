@@ -83,25 +83,26 @@
         /* Tracklist Page Layout */
         .tracklist-page {
             display: flex;
-            flex-direction: row;
             justify-content: center;
             align-items: flex-start;
             padding: 40px;
             width: 100%;
             height: 100%;
             max-width: 1200px;
+            flex-direction: column;
+            align-items: center;
         }
 
         .album-info {
-            flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
             padding-right: 20px;
+            margin-bottom: 20px;
         }
 
         .album-cover-large {
-            width: 350px;
+            width: 300px;
             height: auto;
             margin: 20px 0;
             border-radius: 10px;
@@ -110,21 +111,19 @@
         .details {
             font-size: 0.8rem;
             color: gray;
-            margin-top: 20px;
-            text-align: left;
+            margin-top: 10px;
+            text-align: center;
         }
 
         .tracklist {
-            flex: 1;
+            width: 100%;
+            max-width: 500px;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             padding-left: 40px;
-            padding-right: 40px;
-            max-height: 80vh;
-            overflow-y: scroll;
             margin-top: 20px;
-            margin-left: 80px; /* Increased left margin to move the tracklist to the right */
+            margin-left: 20px;
         }
 
         .tracklist button {
@@ -160,14 +159,14 @@
         /* Back Button */
         .back-button {
             position: absolute;
-            top: 2%;
-            left: 2%;
-            padding: 10px;
+            top: 5%;
+            left: 5%;
+            padding: 5px 10px;
             background-color: #222;
             color: white;
             border: none;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 0.9rem;
             transition: background-color 0.3s;
             font-family: 'Montserrat', sans-serif;
         }
@@ -195,72 +194,64 @@
             100% { color: white; }
         }
 
-        /* Random Glitch Effect */
-        .glitch-text {
-            animation: randomGlitch 2s infinite;
-        }
-
-        /* Center the album section */
-        .album-section {
+        .main-page-content, .tracklist-page {
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
-            margin-top: 50px; /* Add space from the top */
+            align-items: center;
+        }
+
+        /* Additional Styling for Main Page Content */
+        .album-title {
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <!-- Main Page -->
-    <div id="main-page" class="main-page">
+    <div id="main-page">
         <div class="main-page-content">
-            <div class="title glitch-text">Rick Moss</div>
-            <div class="album-section">
-                <button onclick="goToTracklist()">
-                    <img src="album-cover.jpg" alt="Album Cover" class="album-cover">
-                </button>
-                <div class="album-title">THE V@P0R V0ID TAPE</div>
+            <div class="title">THE V@P0R V0ID TAPE</div>
+            <button class="back-button" onclick="goBack()">Back to Main Page</button>
+            <div class="album-cover" onclick="goToTracklist()">
+                <img src="album_cover.jpg" alt="Album Cover">
             </div>
+            <div class="album-title">Rick Moss</div>
         </div>
     </div>
 
-    <!-- Tracklist Page -->
-    <div id="tracklist-page" class="page" style="display: none;">
-        <button class="back-button" onclick="goBack()">Back to Main Page</button>
+    <div id="tracklist-page" style="display: none;">
         <div class="tracklist-page">
-            <!-- Left Side: Album Cover and Details -->
             <div class="album-info">
-                <img src="album-cover.jpg" alt="Album Cover" class="album-cover-large">
+                <div class="album-cover-large">
+                    <img src="album_cover_large.jpg" alt="Album Cover Large">
+                </div>
                 <div class="details">
-                    <p>Album: THE V@P0R V0ID TAPE</p>
                     <p>Production: Rick Moss</p>
                     <p>Writing: Rick Moss</p>
                     <p>Arrangement: Rick Moss</p>
                 </div>
             </div>
 
-            <!-- Separator Line -->
             <div class="separator"></div>
 
-            <!-- Right Side: Tracklist -->
             <div class="tracklist">
-                <button><span>1</span> THE V@P0R V0ID TAPE (INTRO)</button>
-                <button><span>2</span> T0 DR3AM</button>
-                <button><span>3</span> M3AN GH0ST 1N A SK1 M@SK PT. 1</button>
-                <button><span>4</span> I CAN $33 YA</button>
-                <button><span>5</span> G@L@XY G@$ ($UNL1GHT)</button>
-                <button><span>6</span> A3TH3R</button>
-                <button><span>7</span> V@P0R</button>
-                <button><span>8</span> V0ID</button>
-                <button><span>9</span> AND 1 L0V3 H3R</button>
-                <button><span>10</span> QU33N LATIF@H</button>
-                <button><span>11</span> W@N1NG</button>
-                <button><span>12</span> THE LØND0N</button>
-                <button><span>13</span> C0$M1C W@V3$</button>
-                <button><span>14</span> DY$T0P1@N W1ND0W$</button>
-                <button><span>15</span> M3AN GH0ST 1N A SK1 M@SK PT. 2</button>
-                <button><span>16</span> G00DBYE FR1END</button>
-                <button><span>17</span> THE V@P0R V0ID TAPE (OUTRO)</button>
+                <button><span>1.</span> THE V@P0R V0ID TAPE (INTRO)</button>
+                <button><span>2.</span> T0 DR3AM</button>
+                <button><span>3.</span> M3AN GH0ST 1N A SK1 M@SK PT. 1</button>
+                <button><span>4.</span> I CAN $33 YA</button>
+                <button><span>5.</span> G@L@XY G@$ ($UNL1GHT)</button>
+                <button><span>6.</span> A3TH3R</button>
+                <button><span>7.</span> V@P0R</button>
+                <button><span>8.</span> V0ID</button>
+                <button><span>9.</span> AND 1 L0V3 H3R</button>
+                <button><span>10.</span> QU33N LATIF@H</button>
+                <button><span>11.</span> W@N1NG</button>
+                <button><span>12.</span> THE LØND0N</button>
+                <button><span>13.</span> C0$M1C W@V3$</button>
+                <button><span>14.</span> DY$T0P1@N W1ND0W$</button>
+                <button><span>15.</span> M3AN GH0ST 1N A SK1 M@SK PT. 2</button>
+                <button><span>16.</span> G00DBYE FR1END</button>
+                <button><span>17.</span> THE V@P0R V0ID TAPE (OUTRO)</button>
             </div>
         </div>
     </div>
