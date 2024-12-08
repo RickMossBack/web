@@ -90,7 +90,7 @@
         }
 
         .album-cover {
-            width: 250px;
+            width: 200px; /* Smaller album cover */
             height: auto;
             margin: 20px 0;
             border-radius: 10px;
@@ -103,7 +103,7 @@
         }
 
         .album-title {
-            font-size: 1.2rem;
+            font-size: 1rem;
             margin-top: 10px;
             font-weight: bold;
             position: absolute;
@@ -302,8 +302,12 @@
         </div>
     </div>
 
+    <!-- WIP About Section -->
+    <div class="about-section">
+        <p>Scroll to the bottom to see the WIP about section.</p>
+    </div>
+
     <script>
-        // Functions to navigate between pages
         function goToTracklist() {
             document.getElementById("main-page").classList.remove("active");
             document.getElementById("tracklist-page").classList.add("active");
