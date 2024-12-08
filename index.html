@@ -18,25 +18,6 @@
             flex-direction: column;
         }
 
-        .page {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.5s ease-in-out, visibility 0.5s;
-        }
-
-        .page.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
         /* Progress Bar */
         .progress-bar-container {
             width: 100%;
@@ -87,6 +68,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            padding-top: 80px; /* Add space for the title and progress bar */
         }
 
         .album-cover {
@@ -108,6 +90,12 @@
             font-weight: bold;
             position: absolute;
             bottom: 15%;
+        }
+
+        /* Main Page Scrolling */
+        .main-page {
+            overflow-y: scroll;
+            height: 100vh;
         }
 
         /* Tracklist Page Layout */
@@ -214,18 +202,6 @@
             margin: 0 20px;
         }
 
-        /* WIP About Section */
-        .about-section {
-            position: absolute;
-            bottom: 5%;
-            width: 100%;
-            text-align: center;
-            font-size: 1rem;
-            color: white;
-            padding: 20px;
-            border-top: 1px solid #444;
-        }
-
         /* Glitch Effect for Random Areas */
         @keyframes randomGlitch {
             0% { color: white; }
@@ -242,6 +218,14 @@
             animation: randomGlitch 2s infinite;
         }
 
+        /* Center the album section */
+        .album-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px; /* Add space from the top */
+        }
     </style>
 </head>
 <body>
@@ -251,13 +235,15 @@
     </div>
 
     <!-- Main Page -->
-    <div id="main-page" class="page active">
+    <div id="main-page" class="main-page">
         <div class="main-page-content">
             <div class="title glitch-text">Rick Moss</div>
-            <button onclick="goToTracklist()">
-                <img src="album-cover.jpg" alt="Album Cover" class="album-cover">
-            </button>
-            <div class="album-title">THE V@P0R V0ID TAPE</div>
+            <div class="album-section">
+                <button onclick="goToTracklist()">
+                    <img src="album-cover.jpg" alt="Album Cover" class="album-cover">
+                </button>
+                <div class="album-title">THE V@P0R V0ID TAPE</div>
+            </div>
         </div>
     </div>
 
@@ -302,30 +288,18 @@
         </div>
     </div>
 
-    <!-- WIP About Section -->
-    <div class="about-section">
-        <p>Scroll to the bottom to see the WIP about section.</p>
-    </div>
-
     <script>
+        // Show the tracklist page when clicking the album cover
         function goToTracklist() {
-            document.getElementById("main-page").classList.remove("active");
-            document.getElementById("tracklist-page").classList.add("active");
+            document.getElementById('main-page').classList.remove('active');
+            document.getElementById('tracklist-page').classList.add('active');
         }
 
+        // Go back to the main page
         function goBack() {
-            document.getElementById("tracklist-page").classList.remove("active");
-            document.getElementById("main-page").classList.add("active");
+            document.getElementById('main-page').classList.add('active');
+            document.getElementById('tracklist-page').classList.remove('active');
         }
-
-        // Scroll progress bar
-        window.onscroll = function() {
-            var docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            var scrolled = (document.documentElement.scrollTop / docHeight) * 100;
-            if (window.location.pathname === "/index.html") {
-                document.querySelector('.progress-bar').style.width = scrolled + "%";
-            }
-        };
     </script>
 </body>
 </html>
