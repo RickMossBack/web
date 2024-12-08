@@ -16,78 +16,36 @@
 
         .page {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             height: 100vh;
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            transition: opacity 0.5s;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        /* Main Page Styles */
-        #main-page {
             text-align: center;
         }
 
-        .glitch {
-            font-size: 4rem;
+        /* Title Styles */
+        .title {
+            font-size: 3rem;
             font-weight: bold;
-            color: #fff;
-            position: relative;
-            animation: glitch 1.5s infinite;
+            color: white;
+            animation: glitchColor 2s infinite;
         }
 
-        .glitch::before,
-        .glitch::after {
-            content: 'Rick Moss';
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: #fff;
-            background: black;
-            overflow: hidden;
+        @keyframes glitchColor {
+            0%, 100% { color: white; }
+            33% { color: gray; }
+            66% { color: black; }
         }
 
-        .glitch::before {
-            left: 2px;
-            text-shadow: -2px 0 #ff0000;
-            animation: glitch-skew 2s infinite;
-        }
-
-        .glitch::after {
-            left: -2px;
-            text-shadow: 2px 0 #00ff00;
-            animation: glitch-skew 2s infinite;
-        }
-
-        @keyframes glitch {
-            0% { clip: rect(12px, 9999px, 15px, 0); }
-            10% { clip: rect(85px, 9999px, 90px, 0); }
-            20% { clip: rect(30px, 9999px, 35px, 0); }
-            30% { clip: rect(50px, 9999px, 55px, 0); }
-            40% { clip: rect(90px, 9999px, 95px, 0); }
-            50% { clip: rect(60px, 9999px, 65px, 0); }
-            60% { clip: rect(80px, 9999px, 85px, 0); }
-            70% { clip: rect(20px, 9999px, 25px, 0); }
-            80% { clip: rect(70px, 9999px, 75px, 0); }
-            90% { clip: rect(10px, 9999px, 15px, 0); }
-            100% { clip: rect(40px, 9999px, 45px, 0); }
-        }
-
-        @keyframes glitch-skew {
-            0%, 100% { transform: skew(0deg); }
-            50% { transform: skew(10deg); }
-        }
-
+        /* Album Cover Styles */
         .album-cover {
             width: 250px;
             height: auto;
+            margin: 20px 0;
             border-radius: 10px;
             cursor: pointer;
             transition: transform 0.3s;
@@ -97,35 +55,20 @@
             transform: scale(1.1);
         }
 
-        /* Album Page Styles */
-        .content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 80%;
-        }
-
-        .large-cover {
-            width: 45%;
-            max-width: 400px;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-        }
-
+        /* Tracklist and Details */
         .tracklist {
             text-align: left;
-        }
-
-        .tracklist h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+            color: darkgray;
+            font-size: 1rem;
+            margin-top: 20px;
+            max-width: 400px;
+            width: 90%;
         }
 
         .tracklist ol {
             list-style-type: decimal;
             margin: 0;
-            padding: 0 0 1rem;
+            padding: 0;
         }
 
         .tracklist li {
@@ -133,57 +76,39 @@
         }
 
         .details {
-            font-size: 1rem;
-            color: #888;
+            font-size: 0.9rem;
+            color: gray;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    <!-- Main Page -->
-    <div id="main-page" class="page">
-        <h1 class="glitch">Rick Moss</h1>
-        <a href="#album-page">
-            <img src="album-cover.jpg" alt="Album Cover" class="album-cover">
-        </a>
-    </div>
-
     <!-- Album Page -->
-    <div id="album-page" class="page hidden">
-        <div class="content">
-            <img src="album-cover.jpg" alt="Album Cover" class="large-cover">
-            <div class="tracklist">
-                <h2>Tracklist</h2>
-                <ol>
-                    <li>Track 1</li>
-                    <li>Track 2</li>
-                    <li>Track 3</li>
-                    <li>Track 4</li>
-                    <li>Track 5</li>
-                    <li>Track 6</li>
-                    <li>Track 7</li>
-                    <li>Track 8</li>
-                    <li>Track 9</li>
-                    <li>Track 10</li>
-                    <li>Track 11</li>
-                    <li>Track 12</li>
-                    <li>Track 13</li>
-                    <li>Track 14</li>
-                    <li>Track 15</li>
-                    <li>Track 16</li>
-                    <li>Track 17</li>
-                </ol>
-                <p class="details">Album: THE V@P0R V0ID TAPE | 2024</p>
-            </div>
+    <div id="album-page" class="page">
+        <div class="title">Rick Moss</div>
+        <img src="album-cover.jpg" alt="Album Cover" class="album-cover">
+        <div class="tracklist">
+            <ol>
+                <li>THE V@P0R V0ID TAPE (INTRO)</li>
+                <li>T0 DR3AM</li>
+                <li>M3AN GH0ST 1N A SK1 M@SK PT. 1</li>
+                <li>I CAN $33 YA</li>
+                <li>G@L@XY G@$ ($UNL1GHT)</li>
+                <li>A3TH3R</li>
+                <li>V@P0R</li>
+                <li>V0ID</li>
+                <li>AND 1 L0V3 H3R</li>
+                <li>QU33N LATIF@H</li>
+                <li>W@N1NG</li>
+                <li>THE LØND0N</li>
+                <li>C0$M1C W@V3$</li>
+                <li>DY$T0P1@N W1ND0W$</li>
+                <li>M3AN GH0ST 1N A SK1 M@SK PT. 2</li>
+                <li>G00DBYE FR1END</li>
+                <li>THE V@P0R V0ID TAPE (OUTRO)</li>
+            </ol>
+            <p class="details">Album: THE V@P0R V0ID TAPE | 2024</p>
         </div>
     </div>
-
-    <script>
-        // JavaScript to handle page navigation
-        document.querySelector('.album-cover').addEventListener('click', (event) => {
-            event.preventDefault();
-            document.getElementById('main-page').classList.add('hidden');
-            document.getElementById('album-page').classList.remove('hidden');
-        });
-    </script>
 </body>
 </html>
