@@ -128,10 +128,11 @@
     background-image: url('https://github.com/user-attachments/assets/2d025cd3-9267-45b4-8ef0-fb9a20fdc84e'); /* Background image */
     background-size: cover;
     background-position: center;
-    background-color: black; /* Black background */
+    background-color: black; /* Ensure full black background */
+    overflow: hidden; /* Prevents any overflow or unwanted image display */
 }
 
-/* Hides the img tag to avoid any conflict with the background image */
+/* Ensure no <img> tag is visible */
 .album-cover img {
     display: none; /* Ensures no <img> tag interferes */
 }
@@ -158,6 +159,7 @@
     background-size: cover;
     background-position: center;
     background-color: black; /* Black background */
+    overflow: hidden; /* Prevents any overflow or unwanted image display */
 }
 
 .album-page .album-cover img {
