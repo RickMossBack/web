@@ -18,24 +18,6 @@
             flex-direction: column;
         }
 
-        /* Progress Bar */
-        .progress-bar-container {
-            width: 100%;
-            height: 8px;
-            background-color: #333;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-
-        .progress-bar {
-            width: 66%;
-            height: 100%;
-            background-color: #555;
-            transition: width 0.5s;
-        }
-
         /* Title Styles */
         .title {
             font-size: 3rem;
@@ -68,7 +50,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding-top: 80px; /* Add space for the title and progress bar */
+            padding-top: 80px; /* Add space for the title */
         }
 
         .album-cover {
@@ -202,7 +184,7 @@
             margin: 0 20px;
         }
 
-        /* Glitch Effect for Random Areas */
+        /* Random Glitch Effect on Text */
         @keyframes randomGlitch {
             0% { color: white; }
             10% { color: gray; }
@@ -213,7 +195,7 @@
             100% { color: white; }
         }
 
-        /* Random Glitch Effect on Text */
+        /* Random Glitch Effect */
         .glitch-text {
             animation: randomGlitch 2s infinite;
         }
@@ -229,11 +211,6 @@
     </style>
 </head>
 <body>
-    <!-- Progress Bar (only on the main page) -->
-    <div id="main-progress-bar" class="progress-bar-container">
-        <div class="progress-bar"></div>
-    </div>
-
     <!-- Main Page -->
     <div id="main-page" class="main-page">
         <div class="main-page-content">
@@ -248,7 +225,7 @@
     </div>
 
     <!-- Tracklist Page -->
-    <div id="tracklist-page" class="page">
+    <div id="tracklist-page" class="page" style="display: none;">
         <button class="back-button" onclick="goBack()">Back to Main Page</button>
         <div class="tracklist-page">
             <!-- Left Side: Album Cover and Details -->
@@ -289,16 +266,16 @@
     </div>
 
     <script>
-        // Show the tracklist page when clicking the album cover
+        // Switch to the tracklist page
         function goToTracklist() {
-            document.getElementById('main-page').classList.remove('active');
-            document.getElementById('tracklist-page').classList.add('active');
+            document.getElementById('main-page').style.display = 'none';
+            document.getElementById('tracklist-page').style.display = 'flex';
         }
 
         // Go back to the main page
         function goBack() {
-            document.getElementById('main-page').classList.add('active');
-            document.getElementById('tracklist-page').classList.remove('active');
+            document.getElementById('main-page').style.display = 'flex';
+            document.getElementById('tracklist-page').style.display = 'none';
         }
     </script>
 </body>
