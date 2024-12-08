@@ -114,37 +114,31 @@
     justify-content: center;
 }
 
+/* Styling the Album Cover Image as a Background */
 .album-cover {
-    width: 240px; /* Adjusted size for 2400x2400 image */
-    height: 240px; /* Keep the aspect ratio intact */
+    width: 150px; /* Reduced size */
+    height: 150px; /* Set a fixed height */
     margin: 10px 0;
     border-radius: 10px;
-    background-image: url('your-image-url.jpg'); /* Replace with your 2400x2400 image URL */
-    background-size: cover;
-    background-position: center;
+    background-image: url('https://github.com/user-attachments/assets/2d025cd3-9267-45b4-8ef0-fb9a20fdc84e');
+    background-size: cover; /* Ensures the image covers the entire div */
+    background-position: center; /* Centers the image */
     cursor: pointer;
     transition: transform 0.3s ease;
 }
 
+/* Hover Effect for the Album Cover */
 .album-cover:hover {
     transform: scale(1.1);
 }
 
-/* For the album page */
-.album-page .album-cover {
-    width: 240px; /* Consistent size for album page */
-    height: 240px;
-    margin: 20px 0;
-}
-
-/* Album Title */
+/* Styling the Album Title */
 .album-title {
-    font-size: 0.9rem;
+    font-size: 0.9rem; /* Smaller font */
     font-weight: bold;
-    margin-top: 5px;
-    text-align: center;
+    margin-top: 5px; /* Adjust spacing */
+    text-align: center; /* Ensure alignment with the cover */
 }
-
 
     <!-- Hidden Audio Player -->
     <audio id="background-audio" autoplay>
