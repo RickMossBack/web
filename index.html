@@ -166,29 +166,28 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
     padding-left: 40px;
-    max-height: 80vh;
-    overflow-y: auto; /* Ensure smooth vertical scrolling */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    margin-left: 80px;
-    scrollbar-width: thin; /* Slim scrollbar for modern browsers */
-    scrollbar-color: #555 #222;
-    position: relative; /* Keeps the tracklist within its parent container */
+    padding-right: 40px;
+    max-height: 80vh; /* Constrains height for proper scrolling */
+    overflow-y: auto; /* Allows vertical scrolling */
+    margin-top: 20px;
+    margin-left: 80px; /* Ensures alignment to the right */
+    scrollbar-width: thin; /* For modern browsers */
+    scrollbar-color: #555 #222; /* Matches page aesthetics */
 }
 
+/* Custom scrollbar styling for WebKit browsers */
 .tracklist::-webkit-scrollbar {
     width: 8px;
+    background-color: #222; /* Scrollbar track color */
 }
 
 .tracklist::-webkit-scrollbar-thumb {
-    background-color: #555;
+    background-color: #555; /* Scrollbar thumb color */
     border-radius: 4px;
+    border: 1px solid #444; /* Adds slight outline */
 }
 
-.tracklist::-webkit-scrollbar-track {
-    background-color: #222;
-}
 
 /* Separator Line */
 .separator {
