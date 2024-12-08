@@ -114,34 +114,57 @@
     justify-content: center;
 }
 
-/* Styling the Album Cover Image */
+/* Styling the Album Cover Image as a Background */
 .album-cover {
-    width: 150px; /* Set fixed width */
-    height: 150px; /* Set fixed height */
+    width: 240px; /* Set the size for the main page */
+    height: 240px;
     margin: 10px 0;
     border-radius: 10px;
-    overflow: hidden; /* Ensures the image doesn't overflow out of the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
-    transition: transform 0.3s ease; /* Smooth scaling on hover */
+    transition: transform 0.3s ease;
 }
 
-/* Make the image inside the album cover fill the container */
 .album-cover img {
-    width: 100%;  /* Fill the container width */
-    height: 100%; /* Fill the container height */
-    object-fit: cover; /* Ensures the image fills the container without distortion */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the div */
+    border-radius: 10px;
 }
 
 /* Hover Effect for the Album Cover */
 .album-cover:hover {
-    transform: scale(1.1); /* Slightly enlarges the image on hover */
+    transform: scale(1.1);
 }
 
 /* Styling the Album Title */
 .album-title {
-    font-size: 0.9rem; /* Smaller font */
+    font-size: 1rem; /* Adjusted font size */
     font-weight: bold;
     margin-top: 5px;
+    text-align: center;
+}
+
+/* Album Page Layout */
+.album-page .album-cover {
+    width: 350px; /* Larger size for the album page */
+    height: 350px;
+    margin: 20px 0;
+}
+
+.album-page .album-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Album Title Adjustments for the Album Page */
+.album-page .album-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 10px;
     text-align: center;
 }
 
