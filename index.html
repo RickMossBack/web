@@ -96,10 +96,87 @@
         .back-button:hover {
             background-color: #444;
         }
+
+        /* Tracklist Styles */
+        .tracklist-page {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            height: 100%;
+            width: 100%;
+        }
+
+        .album-info {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+        }
+
+        .album-cover-large {
+            width: 250px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .details {
+            font-size: 0.8rem;
+            color: #fff;
+        }
+
+        /* Tracklist */
+        .tracklist button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: transparent;
+            color: white;
+            font-size: 1rem;
+            border: 1px solid #444;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .tracklist button:hover {
+            background-color: #444;
+        }
+
+        .tracklist span {
+            color: gray;
+        }
+
+        .separator {
+            width: 1px;
+            background-color: white;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        /* Page Transition */
+        .transition {
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
     </style>
 </head>
 <body>
-    <div id="main-page">
+    <!-- Main Page -->
+    <div id="main-page" class="main-page">
         <div class="main-page-content">
             <div class="title">THE V@P0R V0ID TAPE</div>
             <button class="back-button" onclick="goBack()">Back to Main Page</button>
@@ -110,40 +187,39 @@
         </div>
     </div>
 
-    <div id="tracklist-page" style="display: none;">
-        <div class="tracklist-page">
-            <div class="album-info">
-                <div class="album-cover-large">
-                    <img src="album_cover_large.jpg" alt="Album Cover Large">
-                </div>
-                <div class="details">
-                    <p>Production: Rick Moss</p>
-                    <p>Writing: Rick Moss</p>
-                    <p>Arrangement: Rick Moss</p>
-                </div>
+    <!-- Tracklist Page -->
+    <div id="tracklist-page" class="tracklist-page" style="display: none;">
+        <div class="album-info">
+            <div class="album-cover-large">
+                <img src="album_cover_large.jpg" alt="Album Cover Large">
             </div>
-
-            <div class="separator"></div>
-
-            <div class="tracklist">
-                <button><span>1.</span> THE V@P0R V0ID TAPE (INTRO)</button>
-                <button><span>2.</span> T0 DR3AM</button>
-                <button><span>3.</span> M3AN GH0ST 1N A SK1 M@SK PT. 1</button>
-                <button><span>4.</span> I CAN $33 YA</button>
-                <button><span>5.</span> G@L@XY G@$ ($UNL1GHT)</button>
-                <button><span>6.</span> A3TH3R</button>
-                <button><span>7.</span> V@P0R</button>
-                <button><span>8.</span> V0ID</button>
-                <button><span>9.</span> AND 1 L0V3 H3R</button>
-                <button><span>10.</span> QU33N LATIF@H</button>
-                <button><span>11.</span> W@N1NG</button>
-                <button><span>12.</span> THE LØND0N</button>
-                <button><span>13.</span> C0$M1C W@V3$</button>
-                <button><span>14.</span> DY$T0P1@N W1ND0W$</button>
-                <button><span>15.</span> M3AN GH0ST 1N A SK1 M@SK PT. 2</button>
-                <button><span>16.</span> G00DBYE FR1END</button>
-                <button><span>17.</span> THE V@P0R V0ID TAPE (OUTRO)</button>
+            <div class="details">
+                <p>Production: Rick Moss</p>
+                <p>Writing: Rick Moss</p>
+                <p>Arrangement: Rick Moss</p>
             </div>
+        </div>
+
+        <div class="separator"></div>
+
+        <div class="tracklist">
+            <button><span>1.</span> THE V@P0R V0ID TAPE (INTRO)</button>
+            <button><span>2.</span> T0 DR3AM</button>
+            <button><span>3.</span> M3AN GH0ST 1N A SK1 M@SK PT. 1</button>
+            <button><span>4.</span> I CAN $33 YA</button>
+            <button><span>5.</span> G@L@XY G@$ ($UNL1GHT)</button>
+            <button><span>6.</span> A3TH3R</button>
+            <button><span>7.</span> V@P0R</button>
+            <button><span>8.</span> V0ID</button>
+            <button><span>9.</span> AND 1 L0V3 H3R</button>
+            <button><span>10.</span> QU33N LATIF@H</button>
+            <button><span>11.</span> W@N1NG</button>
+            <button><span>12.</span> THE LØND0N</button>
+            <button><span>13.</span> C0$M1C W@V3$</button>
+            <button><span>14.</span> DY$T0P1@N W1ND0W$</button>
+            <button><span>15.</span> M3AN GH0ST 1N A SK1 M@SK PT. 2</button>
+            <button><span>16.</span> G00DBYE FR1END</button>
+            <button><span>17.</span> THE V@P0R V0ID TAPE (OUTRO)</button>
         </div>
     </div>
 
