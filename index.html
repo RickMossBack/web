@@ -125,15 +125,15 @@
     align-items: center;
     cursor: pointer;
     transition: transform 0.3s ease;
-    background-image: url('https://github.com/user-attachments/assets/2d025cd3-9267-45b4-8ef0-fb9a20fdc84e'); /* Add image as background */
+    background-image: url('https://github.com/user-attachments/assets/2d025cd3-9267-45b4-8ef0-fb9a20fdc84e'); /* Background image */
     background-size: cover;
     background-position: center;
-    background-color: black; /* Black background for album cover */
+    background-color: black; /* Black background */
 }
 
-/* Ensure img tag does not conflict with background */
+/* Hides the img tag to avoid any conflict with the background image */
 .album-cover img {
-    display: none; /* Hides the img tag if it's still in the HTML */
+    display: none; /* Ensures no <img> tag interferes */
 }
 
 /* Hover Effect for the Album Cover */
@@ -154,14 +154,14 @@
     width: 350px; /* Larger size for the album page */
     height: 350px;
     margin: 20px 0;
-    background-image: url('https://github.com/user-attachments/assets/2d025cd3-9267-45b4-8ef0-fb9a20fdc84e'); /* Add image as background */
+    background-image: url('https://github.com/user-attachments/assets/2d025cd3-9267-45b4-8ef0-fb9a20fdc84e'); /* Background image */
     background-size: cover;
     background-position: center;
-    background-color: black; /* Black background for album cover */
+    background-color: black; /* Black background */
 }
 
 .album-page .album-cover img {
-    display: none; /* Hides img tag as background image is used */
+    display: none; /* Hides img tag as the background image is used */
 }
 
 /* Album Title Adjustments for the Album Page */
@@ -171,6 +171,7 @@
     margin-top: 10px;
     text-align: center;
 }
+
 
 
         /* Tracklist Page Layout */
