@@ -37,7 +37,8 @@
             visibility: visible;
         }
 
-      .title {
+     /* Glitchy Title */
+.title {
     font-size: 3rem;
     font-weight: bold;
     color: white;
@@ -45,47 +46,69 @@
     top: 10%;
     left: 50%;
     transform: translateX(-50%);
-    animation: glitchEffect 0.3s infinite; /* Faster animation cycle */
+    animation: glitchText 2s infinite, staticEffect 1.5s infinite;
     letter-spacing: 0.05em;
-    text-shadow: 
-        2px 2px #ff00ff,
-        -2px -2px #00ffff,
-        3px 0 #ff0000,
-        0 3px #00ff00;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #00f, 0 0 20px yellow;
 }
 
-@keyframes glitchEffect {
+/* Glitching Text Animation */
+@keyframes glitchText {
     0% {
-        transform: translateX(-50%) translateY(0);
-        color: white;
-        text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff, 3px 0 #ff0000, 0 3px #00ff00;
+        transform: translate(0, 0);
+        clip-path: inset(0% 0% 0% 0%);
     }
     10% {
-        transform: translateX(-50%) translateY(-2px);
-        color: #ff00ff;
-        text-shadow: -2px -2px #00ffff, 2px 2px #00ff00, -3px 0 #ff0000;
+        transform: translate(-2px, 2px);
+        clip-path: inset(10% 0% 50% 0%);
     }
     20% {
-        transform: translateX(-50%) translateY(2px);
-        color: #00ffff;
-        text-shadow: 3px 3px #ff00ff, 0 -3px #ff0000, -2px 0 #00ff00;
+        transform: translate(2px, -2px);
+        clip-path: inset(0% 0% 20% 0%);
+    }
+    30% {
+        transform: translate(-1px, 1px);
+        clip-path: inset(20% 0% 60% 0%);
     }
     40% {
-        transform: translateX(-50%) translateY(-3px);
-        color: #ff0000;
-        text-shadow: -2px -2px #00ffff, 2px 3px #ff00ff, 0 3px #00ff00;
+        transform: translate(3px, -3px);
+        clip-path: inset(40% 0% 10% 0%);
+    }
+    50% {
+        transform: translate(-2px, 2px);
+        clip-path: inset(0% 0% 30% 0%);
     }
     60% {
-        transform: translateX(-50%) translateY(3px);
-        color: #00ff00;
-        text-shadow: 2px 2px #ff00ff, -3px 0 #ff0000, 0 -3px #00ffff;
+        transform: translate(1px, -1px);
+        clip-path: inset(50% 0% 40% 0%);
+    }
+    70% {
+        transform: translate(-3px, 3px);
+        clip-path: inset(30% 0% 50% 0%);
+    }
+    80% {
+        transform: translate(2px, -2px);
+        clip-path: inset(10% 0% 70% 0%);
+    }
+    90% {
+        transform: translate(-1px, 1px);
+        clip-path: inset(60% 0% 20% 0%);
     }
     100% {
-        transform: translateX(-50%) translateY(0);
-        color: white;
-        text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff, 3px 0 #ff0000, 0 3px #00ff00;
+        transform: translate(0, 0);
+        clip-path: inset(0% 0% 0% 0%);
     }
 }
+
+/* Static Effect */
+@keyframes staticEffect {
+    0%, 100% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #00f, 0 0 20px yellow;
+    }
+    50% {
+        text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 8px #00f, 0 0 10px yellow;
+    }
+}
+
 
 
         /* Main Page Layout */
