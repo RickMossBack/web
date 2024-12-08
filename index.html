@@ -38,6 +38,7 @@
         }
 
      /* Glitchy Title */
+/* Title Styles */
 .title {
     font-size: 3rem;
     font-weight: bold;
@@ -46,56 +47,47 @@
     top: 10%;
     left: 50%;
     transform: translateX(-50%);
-    animation: glitchText 2s infinite, staticEffect 1.5s infinite;
+    animation: glitch 1.5s infinite;
     letter-spacing: 0.05em;
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #00f, 0 0 20px yellow;
+    display: inline-block;
+    white-space: nowrap;
 }
 
-/* Glitching Text Animation */
-@keyframes glitchText {
-    0% {
-        transform: translate(0, 0);
-        clip-path: inset(0% 0% 0% 0%);
+@keyframes glitch {
+    0%, 100% {
+        color: white;
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #0F0, 0 0 30px #0F0, 0 0 40px #0F0;
+        transform: translateX(0) skew(0deg);
     }
     10% {
-        transform: translate(-2px, 2px);
-        clip-path: inset(10% 0% 50% 0%);
+        color: #0F0; /* Green color */
+        text-shadow: 0 0 5px #fff, 0 0 10px #0F0, 0 0 20px #0F0, 0 0 30px #0F0;
+        transform: translateX(-2px) skew(-10deg);
     }
     20% {
-        transform: translate(2px, -2px);
-        clip-path: inset(0% 0% 20% 0%);
+        color: #0F0;
+        text-shadow: 0 0 5px #fff, 0 0 10px #0F0, 0 0 20px #0F0, 0 0 30px #0F0;
+        transform: translateX(2px) skew(5deg);
     }
     30% {
-        transform: translate(-1px, 1px);
-        clip-path: inset(20% 0% 60% 0%);
-    }
-    40% {
-        transform: translate(3px, -3px);
-        clip-path: inset(40% 0% 10% 0%);
+        color: white;
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
+        transform: translateX(-5px) skew(10deg);
     }
     50% {
-        transform: translate(-2px, 2px);
-        clip-path: inset(0% 0% 30% 0%);
-    }
-    60% {
-        transform: translate(1px, -1px);
-        clip-path: inset(50% 0% 40% 0%);
+        color: #0F0;
+        text-shadow: 0 0 5px #fff, 0 0 10px #0F0, 0 0 20px #0F0, 0 0 30px #0F0;
+        transform: translateX(5px) skew(-10deg);
     }
     70% {
-        transform: translate(-3px, 3px);
-        clip-path: inset(30% 0% 50% 0%);
-    }
-    80% {
-        transform: translate(2px, -2px);
-        clip-path: inset(10% 0% 70% 0%);
+        color: #0F0;
+        text-shadow: 0 0 5px #fff, 0 0 10px #0F0, 0 0 20px #0F0, 0 0 30px #0F0;
+        transform: translateX(-3px) skew(15deg);
     }
     90% {
-        transform: translate(-1px, 1px);
-        clip-path: inset(60% 0% 20% 0%);
-    }
-    100% {
-        transform: translate(0, 0);
-        clip-path: inset(0% 0% 0% 0%);
+        color: white;
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
+        transform: translateX(3px) skew(-5deg);
     }
 }
 
