@@ -25,6 +25,14 @@
             left: 0;
             width: 100%;
             text-align: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1s, visibility 1s;
+        }
+
+        .page.active {
+            opacity: 1;
+            visibility: visible;
         }
 
         /* Title Styles */
@@ -55,24 +63,28 @@
             transform: scale(1.1);
         }
 
-        /* Tracklist and Details */
+        /* Tracklist and Buttons */
         .tracklist {
-            text-align: left;
-            color: darkgray;
-            font-size: 1rem;
             margin-top: 20px;
             max-width: 400px;
             width: 90%;
         }
 
-        .tracklist ol {
-            list-style-type: decimal;
-            margin: 0;
-            padding: 0;
+        .tracklist button {
+            display: block;
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 10px 0;
+            font-size: 1rem;
+            text-align: left;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
 
-        .tracklist li {
-            margin: 0.5rem 0;
+        .tracklist button:hover {
+            background-color: #555;
         }
 
         .details {
@@ -83,32 +95,42 @@
     </style>
 </head>
 <body>
-    <!-- Album Page -->
-    <div id="album-page" class="page">
+    <!-- Main Page -->
+    <div id="main-page" class="page active">
         <div class="title">Rick Moss</div>
+        <img src="album-cover.jpg" alt="Album Cover" class="album-cover" onclick="goToTracklist()">
+    </div>
+
+    <!-- Tracklist Page -->
+    <div id="tracklist-page" class="page">
         <img src="album-cover.jpg" alt="Album Cover" class="album-cover">
         <div class="tracklist">
-            <ol>
-                <li>THE V@P0R V0ID TAPE (INTRO)</li>
-                <li>T0 DR3AM</li>
-                <li>M3AN GH0ST 1N A SK1 M@SK PT. 1</li>
-                <li>I CAN $33 YA</li>
-                <li>G@L@XY G@$ ($UNL1GHT)</li>
-                <li>A3TH3R</li>
-                <li>V@P0R</li>
-                <li>V0ID</li>
-                <li>AND 1 L0V3 H3R</li>
-                <li>QU33N LATIF@H</li>
-                <li>W@N1NG</li>
-                <li>THE LØND0N</li>
-                <li>C0$M1C W@V3$</li>
-                <li>DY$T0P1@N W1ND0W$</li>
-                <li>M3AN GH0ST 1N A SK1 M@SK PT. 2</li>
-                <li>G00DBYE FR1END</li>
-                <li>THE V@P0R V0ID TAPE (OUTRO)</li>
-            </ol>
-            <p class="details">Album: THE V@P0R V0ID TAPE | 2024</p>
+            <button>1. THE V@P0R V0ID TAPE (INTRO)</button>
+            <button>2. T0 DR3AM</button>
+            <button>3. M3AN GH0ST 1N A SK1 M@SK PT. 1</button>
+            <button>4. I CAN $33 YA</button>
+            <button>5. G@L@XY G@$ ($UNL1GHT)</button>
+            <button>6. A3TH3R</button>
+            <button>7. V@P0R</button>
+            <button>8. V0ID</button>
+            <button>9. AND 1 L0V3 H3R</button>
+            <button>10. QU33N LATIF@H</button>
+            <button>11. W@N1NG</button>
+            <button>12. THE LØND0N</button>
+            <button>13. C0$M1C W@V3$</button>
+            <button>14. DY$T0P1@N W1ND0W$</button>
+            <button>15. M3AN GH0ST 1N A SK1 M@SK PT. 2</button>
+            <button>16. G00DBYE FR1END</button>
+            <button>17. THE V@P0R V0ID TAPE (OUTRO)</button>
         </div>
+        <p class="details">Album: THE V@P0R V0ID TAPE | 2024</p>
     </div>
+
+    <script>
+        function goToTracklist() {
+            document.getElementById('main-page').classList.remove('active');
+            document.getElementById('tracklist-page').classList.add('active');
+        }
+    </script>
 </body>
 </html>
