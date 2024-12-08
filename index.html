@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rick Moss | THE V@P0R V0ID TAPE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet"> <!-- Similar font -->
     <style>
         /* General Styles */
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             color: #fff;
             background-color: #000;
             overflow: hidden;
@@ -47,7 +48,12 @@
             66% { color: black; }
         }
 
-        /* Album Cover Styles */
+        /* Main Page Layout */
+        .main-page-content {
+            text-align: center;
+            align-items: center;
+        }
+
         .album-cover {
             width: 300px;
             height: auto;
@@ -59,6 +65,12 @@
 
         .album-cover:hover {
             transform: scale(1.1);
+        }
+
+        .album-title {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            font-weight: bold;
         }
 
         /* Tracklist Page Layout */
@@ -91,6 +103,9 @@
             flex-direction: column;
             align-items: flex-start;
             padding-left: 40px;
+            max-height: 80vh;
+            overflow-y: scroll;
+            padding-right: 40px;
         }
 
         .tracklist button {
@@ -98,9 +113,9 @@
             background-color: #333;
             color: white;
             border: none;
-            padding: 10px 15px;
+            padding: 15px 20px;
             margin: 10px 0;
-            font-size: 1rem;
+            font-size: 1.25rem;
             text-align: left;
             cursor: pointer;
             width: 100%;
@@ -110,13 +125,26 @@
         .tracklist button:hover {
             background-color: #555;
         }
+
+        .tracklist button span {
+            background-color: #444;
+            padding: 5px;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+
     </style>
 </head>
 <body>
     <!-- Main Page -->
     <div id="main-page" class="page active">
-        <div class="title">Rick Moss</div>
-        <img src="album-cover.jpg" alt="Album Cover" class="album-cover" onclick="goToTracklist()">
+        <div class="main-page-content">
+            <div class="title">Rick Moss</div>
+            <button onclick="goToTracklist()">
+                <img src="album-cover.jpg" alt="Album Cover" class="album-cover">
+            </button>
+            <div class="album-title">THE V@P0R V0ID TAPE</div>
+        </div>
     </div>
 
     <!-- Tracklist Page -->
@@ -134,23 +162,23 @@
             </div>
             <!-- Right Side: Tracklist -->
             <div class="tracklist">
-                <button>1. THE V@P0R V0ID TAPE (INTRO)</button>
-                <button>2. T0 DR3AM</button>
-                <button>3. M3AN GH0ST 1N A SK1 M@SK PT. 1</button>
-                <button>4. I CAN $33 YA</button>
-                <button>5. G@L@XY G@$ ($UNL1GHT)</button>
-                <button>6. A3TH3R</button>
-                <button>7. V@P0R</button>
-                <button>8. V0ID</button>
-                <button>9. AND 1 L0V3 H3R</button>
-                <button>10. QU33N LATIF@H</button>
-                <button>11. W@N1NG</button>
-                <button>12. THE LØND0N</button>
-                <button>13. C0$M1C W@V3$</button>
-                <button>14. DY$T0P1@N W1ND0W$</button>
-                <button>15. M3AN GH0ST 1N A SK1 M@SK PT. 2</button>
-                <button>16. G00DBYE FR1END</button>
-                <button>17. THE V@P0R V0ID TAPE (OUTRO)</button>
+                <button><span>1</span> THE V@P0R V0ID TAPE (INTRO)</button>
+                <button><span>2</span> T0 DR3AM</button>
+                <button><span>3</span> M3AN GH0ST 1N A SK1 M@SK PT. 1</button>
+                <button><span>4</span> I CAN $33 YA</button>
+                <button><span>5</span> G@L@XY G@$ ($UNL1GHT)</button>
+                <button><span>6</span> A3TH3R</button>
+                <button><span>7</span> V@P0R</button>
+                <button><span>8</span> V0ID</button>
+                <button><span>9</span> AND 1 L0V3 H3R</button>
+                <button><span>10</span> QU33N LATIF@H</button>
+                <button><span>11</span> W@N1NG</button>
+                <button><span>12</span> THE LØND0N</button>
+                <button><span>13</span> C0$M1C W@V3$</button>
+                <button><span>14</span> DY$T0P1@N W1ND0W$</button>
+                <button><span>15</span> M3AN GH0ST 1N A SK1 M@SK PT. 2</button>
+                <button><span>16</span> G00DBYE FR1END</button>
+                <button><span>17</span> THE V@P0R V0ID TAPE (OUTRO)</button>
             </div>
         </div>
     </div>
