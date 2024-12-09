@@ -322,6 +322,36 @@ body.no-scroll {
         .glitch-text {
             animation: randomGlitch 2s infinite;
         }
+        
+.album-title-glitch {
+    font-size: 3rem; /* Match the main page title size */
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    animation: rareGlitch 10s infinite; /* Rare glitch animation */
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #0F0, 0 0 30px #0F0, 0 0 40px #0F0;
+    white-space: nowrap;
+    letter-spacing: 0.05em;
+}
+
+@keyframes rareGlitch {
+    0%, 95% {
+        transform: none;
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #0F0, 0 0 30px #0F0, 0 0 40px #0F0;
+    }
+    96% {
+        transform: translateX(-3px) skew(-5deg);
+        text-shadow: 0 0 5px #0F0, 0 0 10px #F00, 0 0 20px #F00, 0 0 30px #00F;
+    }
+    97% {
+        transform: translateX(3px) skew(5deg);
+        text-shadow: 0 0 5px #F00, 0 0 10px #0F0, 0 0 20px #00F, 0 0 30px #F00;
+    }
+    98%, 100% {
+        transform: none;
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #0F0, 0 0 30px #0F0, 0 0 40px #0F0;
+    }
+}
 
     </style>
 </head>
@@ -337,7 +367,7 @@ body.no-scroll {
         </div>
     </div>
 
-   <!-- Tracklist Page -->
+<!-- Tracklist Page -->
 <div id="tracklist-page" class="page">
     <button class="back-button" onclick="goBack()">Back to Main Page</button>
     <div class="tracklist-page">
@@ -345,7 +375,7 @@ body.no-scroll {
         <div class="album-info">
             <div class="album-cover-large" style="background-image: url('https://github.com/user-attachments/assets/2d025cd3-9267-45b4-8ef0-fb9a20fdc84e'); background-size: cover; background-position: center; border-radius: 10px; width: 350px; height: 350px;"></div>
             <div class="details">
-                <p>Album: THE V@P0R V0ID TAPE</p>
+                <p class="album-title-glitch">THE V@P0R V0ID TAPE</p>
                 <p>Production: Rick Moss</p>
                 <p>Writing: Rick Moss</p>
                 <p>Arrangement: Rick Moss</p>
