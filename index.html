@@ -171,26 +171,21 @@
 
 .tracklist-page {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start; /* Aligns album cover and tracklist at the top */
+    justify-content: space-between; /* Left for album cover, right for tracklist */
     padding: 40px;
-    width: 100%;
-    height: 100%;
     max-width: 1200px;
     margin: auto;
 }
 
 
-/* Left Side: Album Cover and Details */
 .album-info {
-    flex: 0 0 40%; /* Takes up 40% of the width */
+    flex: 0 0 40%; /* Takes 40% of the width for the album cover and details */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Align content to the top */
+    justify-content: flex-start;
     padding-right: 20px;
-    text-align: center; /* Center text */
+    text-align: center;
 }
 /* Album Cover */
 .album-cover-large {
@@ -211,19 +206,14 @@
 body.no-scroll {
     overflow: hidden;
 }
-
 .tracklist {
-    flex: 1;
+    flex: 0 0 55%; /* Takes 55% of the width for the tracklist */
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding-left: 20px; /* Reduced padding to make alignment tighter */
-    padding-right: 20px; /* Adjusted for uniformity */
-    max-height: 80vh; /* Constrains height for proper scrolling */
-    overflow-y: auto; /* Allows vertical scrolling */
-    scrollbar-width: thin; /* For modern browsers */
-    scrollbar-color: #555 #222; /* Matches page aesthetics */
-    margin-top: 20px; /* Maintains top margin */
+    padding-left: 20px;
+    padding-right: 20px;
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 
@@ -380,9 +370,7 @@ body.no-scroll {
                 <p>Arrangement: Rick Moss</p>
             </div>
         </div>
-    </div>
-</div>
-
+        
             <!-- Separator Line -->
             <div class="separator"></div>
 
