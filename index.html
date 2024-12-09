@@ -169,31 +169,29 @@
 
 
 
-        /* Tracklist Page Layout */
+ /* Tracklist Page Layout */
 .tracklist-page {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center; /* Vertically center the content */
-    padding: 40px;
+    justify-content: space-between; /* Ensures separation between album info and tracklist */
+    align-items: flex-start; /* Aligns items to the top */
     width: 100%;
     height: 100%;
+    padding: 40px;
     max-width: 1200px;
     margin: auto;
-    position: relative; /* Ensure proper centering */
 }
 
 /* Left Side: Album Cover and Details */
 .album-info {
-    flex: 1;
+    flex: 0 0 40%; /* Takes up 40% of the width */
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center; /* Align text and content in the center */
-    justify-content: center; /* Center vertically */
+    justify-content: flex-start; /* Align content to the top */
     padding-right: 20px;
+    text-align: center; /* Center text */
 }
-
 /* Album Cover */
 .album-cover-large {
     width: 350px;
@@ -219,15 +217,15 @@ body.no-scroll {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 20px; /* Reduced padding to make alignment tighter */
+    padding-right: 20px; /* Adjusted for uniformity */
     max-height: 80vh; /* Constrains height for proper scrolling */
     overflow-y: auto; /* Allows vertical scrolling */
-    margin-top: 20px;
-    margin-left: 80px; /* Ensures alignment to the right */
     scrollbar-width: thin; /* For modern browsers */
     scrollbar-color: #555 #222; /* Matches page aesthetics */
+    margin-top: 20px; /* Maintains top margin */
 }
+
 
 /* Custom scrollbar styling for WebKit browsers */
 .tracklist::-webkit-scrollbar {
@@ -245,7 +243,7 @@ body.no-scroll {
 /* Separator Line */
 .separator {
     width: 2px;
-    height: 80%;
+    height: 100%;
     background-color: #444;
     margin: 0 20px;
 }
