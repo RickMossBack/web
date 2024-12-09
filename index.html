@@ -272,12 +272,13 @@ body.no-scroll {
             transform: scale(1.05);
         }
 
-        .tracklist button span {
-            background-color: #444;
-            padding: 5px;
-            margin-right: 10px;
-            border-radius: 5px;
-        }
+       .tracklist button span {
+    background-color: black; /* Changed to black */
+    padding: 5px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
 
         /* Back Button */
         .back-button {
@@ -336,20 +337,20 @@ body.no-scroll {
         </div>
     </div>
 
-    <!-- Tracklist Page -->
-    <div id="tracklist-page" class="page">
-        <button class="back-button" onclick="goBack()">Back to Main Page</button>
-        <div class="tracklist-page">
-            <!-- Left Side: Album Cover and Details -->
-            <div class="album-info">
-                <img src="album-cover.jpg" alt="Album Cover" class="album-cover-large">
-                <div class="details">
-                    <p>Album: THE V@P0R V0ID TAPE</p>
-                    <p>Production: Rick Moss</p>
-                    <p>Writing: Rick Moss</p>
-                    <p>Arrangement: Rick Moss</p>
-                </div>
+   <!-- Tracklist Page -->
+<div id="tracklist-page" class="page">
+    <button class="back-button" onclick="goBack()">Back to Main Page</button>
+    <div class="tracklist-page">
+        <!-- Left Side: Album Cover and Details -->
+        <div class="album-info">
+            <div class="album-cover-large" style="background-image: url('https://github.com/user-attachments/assets/2d025cd3-9267-45b4-8ef0-fb9a20fdc84e'); background-size: cover; background-position: center; border-radius: 10px; width: 350px; height: 350px;"></div>
+            <div class="details">
+                <p>Album: THE V@P0R V0ID TAPE</p>
+                <p>Production: Rick Moss</p>
+                <p>Writing: Rick Moss</p>
+                <p>Arrangement: Rick Moss</p>
             </div>
+        </div>
 
             <!-- Separator Line -->
             <div class="separator"></div>
